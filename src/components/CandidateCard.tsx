@@ -16,19 +16,19 @@ type CandidateCardProp = {
   ) => void) | null;
 };
 
-//const CandidateCard = (prop:CandidateCardProp) => {
-const CandidateCard = () => {
+const CandidateCard = (prop:CandidateCardProp) => {
+// const CandidateCard = () => {
     return (
         <div className="profile-card">
             <div className="profile-card__image">
-                <img src={'https://cameronmcefee.com/img/work/the-octocat/original.jpg'} alt={'octocat'} />
+                <img src={prop.currentCandidate?.avatar_url} alt={`${prop.currentCandidate?.login}`} />
             </div>
             <div className="profile-card__details">
-                <h2>{'octocat'}<span>({'octocat'})</span></h2>
-                <p><strong>Location:</strong> {'UK, London'}</p>
-                <p><strong>Email:</strong> <a href={`mailto:${'octocat@github.com'}`}>{'octocat@github.com'}</a></p>
-                <p><strong>Company:</strong> {'Github'}</p>
-                <p><strong>Bio:</strong> {`I'm the mascot for everyone's favorite version control system!`}</p>
+                <h2>{prop.currentCandidate?.login}<span>({prop.currentCandidate?.login})</span></h2>
+                <p><strong>Location:</strong> {prop.currentCandidate?.location}</p>
+                <p><strong>Email:</strong> <a href={`mailto:${prop.currentCandidate?.email}`}>{prop.currentCandidate?.email}</a></p>
+                <p><strong>Company:</strong> {prop.currentCandidate?.company}</p>
+                <p><strong>Bio:</strong> {prop.currentCandidate?.bio}</p>
             </div>
             <div className="profile-card__actions">
                 <button className="btn btn--red">
