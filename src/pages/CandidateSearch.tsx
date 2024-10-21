@@ -21,7 +21,7 @@ const CandidateSearch = () => {
     bio: '',
   });
 
-  // Function for adding Candidate to potential candidate list
+  //* Function for adding Candidate to potential candidate list
   const addToPotential = () => {
     let parsedCandidates:Candidate[] = [];
     const storedCandiates = localStorage.getItem('potentialCandidates');
@@ -30,35 +30,24 @@ const CandidateSearch = () => {
     }
     parsedCandidates.push(currentCandidate);
     localStorage.setItem('potentialCandidates', JSON.stringify(parsedCandidates));
+    fetchCandidates();
   }
 
-  // Function for searching for candidates using GitHub Personal Access Tocken
-  // useEffect(() => {
-  //   const fetchCandidates = async () => {
-  //     try {
-  //     const data:Candidate = await searchGithub();
+  const fetchCandidates = async () => {
+    try {
+        const data: Candidate[] = await searchGithub(); // Call the searchGithub function
+        
+        const userData: Candidate = await searchGithubUser(data[0].login);
 
-  //     setCurrentCandidate(data || null);
-  //     } catch (err) {
-  //       err
-  //     }
-  //   }
-  // },[])
-  // }
+        setCurrentCandidate(userData); // Update the state with the fetched candidates
+    } catch (err) {
+        setError('An error occurred while fetching candidates');
+    } finally {
+        setLoading(false); // Set loading to false after the fetch is complete
+    }
+};
+
   useEffect(() => {
-    const fetchCandidates = async () => {
-        try {
-            const data: Candidate[] = await searchGithub(); // Call the searchGithub function
-            
-            const userData: Candidate = await searchGithubUser(data[0].login);
-
-            setCurrentCandidate(userData); // Update the state with the fetched candidates
-        } catch (err) {
-            setError('An error occurred while fetching candidates');
-        } finally {
-            setLoading(false); // Set loading to false after the fetch is complete
-        }
-    };
     console.log('fetch candidates')
     fetchCandidates(); // Invoke the fetch function
   }, []); // Empty dependency array means this effect runs once on mount
@@ -74,6 +63,14 @@ const CandidateSearch = () => {
       <CandidateCard
         currentCandidate={currentCandidate}
       />
+      <div className="profile-card__actions">
+        <button className="btn btn--red" onClick={() => fetchCandidates()}>
+            <span className="btn__icon">-</span>
+        </button>
+        <button className="btn btn--green" onClick={() => addToPotential()}>
+            <span className="btn__icon">+</span>
+        </button>
+      </div>
       
       {console.log(`Current Candidate: ${currentCandidate}`)};
       {console.log(currentCandidate)};

@@ -1,8 +1,8 @@
 import type React from 'react';
 import type Candidate from '../interfaces/Candidate.interface';
-import { IoEyeOutline } from 'react-icons/io5';
-import { ImCross } from 'react-icons/im';
-import { CgPlayListAdd } from 'react-icons/cg';
+// import { IoEyeOutline } from 'react-icons/io5';
+// import { ImCross } from 'react-icons/im';
+// import { CgPlayListAdd } from 'react-icons/cg';
 
 type CandidateCardProp = {
     addToPotential?: (() => void) | null;
@@ -30,14 +30,7 @@ const CandidateCard = (prop:CandidateCardProp) => {
                 <p><strong>Company:</strong> {prop.currentCandidate?.company}</p>
                 <p><strong>Bio:</strong> {prop.currentCandidate?.bio}</p>
             </div>
-            <div className="profile-card__actions">
-                <button className="btn btn--red">
-                    <span className="btn__icon">-</span>
-                </button>
-                <button className="btn btn--green">
-                    <span className="btn__icon">+</span>
-                </button>
-            </div>
+
         </div>
     );
 };
