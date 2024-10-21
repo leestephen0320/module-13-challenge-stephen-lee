@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 
 import type Candidate from '../interfaces/Candidate.interface';
+import CandidateCard from '../components/CandidateCard';
 
 const CandidateSearch = () => {
   //! the function part of the page
@@ -11,6 +12,7 @@ const CandidateSearch = () => {
   const [currentCandidate, setCurrentCandidate] = useState<Candidate>({
     AvatarURL: '',
     Login: '',
+    Name:'',
     Location: '',
     Email: '',
     Company: '',
@@ -30,7 +32,12 @@ const CandidateSearch = () => {
 
   //! ==========================================
   //! the html part of the page
-  return <h1>CandidateSearch</h1>;
+  return (
+    <>
+      <h1>CandidateSearch</h1>
+      <CandidateCard/>
+    </>
+  )
 };
 
 export default CandidateSearch;

@@ -3,6 +3,7 @@
 export default interface Candidate {
     readonly AvatarURL: string | null;
     readonly Login: string | null;
+    readonly Name: string | null;
     readonly Location: string | null;
     readonly Email: string | null;
     readonly Company: string | null;

@@ -6,7 +6,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <ul className='nav nav-tabs'>
+      <ul className='nav'>
         <li className='nav-item'>
           <h2>
             <Link
