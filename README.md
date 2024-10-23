@@ -1,33 +1,39 @@
-# React + TypeScript + Vite
+# Module 13 Challenge Stephen Lee
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+I wanted to create a website that goes through the GitHub REST API and returns the user data similar to a dating app like Tinder. I want to see candidates one at a time and have the option to either dismiss or save a candidate. Once saved, candidates would appear again on a table where I could further narrow down the selection by removing a candidate row from the table.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Tests](#tests)
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+Go to the following link to access the website: [https://deluxe-pastelito-8a6418.netlify.app/](https://deluxe-pastelito-8a6418.netlify.app/)
 
-## Expanding the ESLint configuration
+## Usage
+### Nav
+Navigates to the two pages of the website. Home or Potential Candidates
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Home
+Shows a GitHub user that can either be added to the list of potential candidates by pressing the + button, or rejecting them by pressing the - button.
 
-* Configure the top-level `parserOptions` property as follows:
+![home](assets\home-candidate-card.jpg)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Potential Candidates
+A table that shows saved candidates. Can press the - button to remove candidate from the table.
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+![table](assets\candidate-table.jpg)
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Credits
+- GitHub Repository: [https://github.com/leestephen0320/module-13-challenge-stephen-lee](https://github.com/leestephen0320/module-13-challenge-stephen-lee)
+- Deployed Link: [https://deluxe-pastelito-8a6418.netlify.app/](https://deluxe-pastelito-8a6418.netlify.app/)
+
+## License
+Distributed under the MIT License.
+
+## Tests
+Press + to save a candidate. Then navigate to the potential candidates page to see that the user was saved. Then press - to remove them form the table.
