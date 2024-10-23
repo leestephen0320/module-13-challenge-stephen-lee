@@ -63,6 +63,7 @@ const SavedCandidates = () => {
         <tbody>
           <SavedCandidateTables
             potentialCandidates={potentialCandidates}
+            setPotentialCandidates={setPotentialCandidates}
           />
         </tbody>
       </table>

@@ -2,7 +2,7 @@ import type Candidate from '../interfaces/Candidate.interface';
 
 export const removeFromStorage = (
     login: string | undefined,
-
+    setPotentialCandidates: React.Dispatch<React.SetStateAction<Candidate[]>>
   ) => {
 
     //! remove from storage part
@@ -13,10 +13,10 @@ export const removeFromStorage = (
       parsedCandidates = JSON.parse(storedCandiates);
     }
     parsedCandidates = parsedCandidates.filter(
-      (film) => film.login !== login
+      (Candidate) => Candidate.login !== login
     );
     // setPotentialCandidates(parsedCandidates);
     localStorage.setItem('potentialCandidates', JSON.stringify(parsedCandidates));
 
-    window.location.reload();
+    setPotentialCandidates(parsedCandidates);
   }

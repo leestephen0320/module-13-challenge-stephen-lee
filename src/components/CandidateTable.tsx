@@ -7,7 +7,8 @@ import { removeFromStorage } from '../util/removeFromStorage';
 type CandidateCardProp = {
     addToPotential?: (() => void) | null;
     potentialCandidate?:Candidate,
-    onPotentialCandidates?: boolean | null
+    onPotentialCandidates?: boolean | null;
+    setPotentialCandidates: React.Dispatch<React.SetStateAction<Candidate[]>>;
 };
 
 const CandidateTable = (prop:CandidateCardProp) => {
@@ -27,7 +28,7 @@ const CandidateTable = (prop:CandidateCardProp) => {
             <td>{prop.potentialCandidate?.bio}</td>
             <td>
             <button
-             onClick={() => removeFromStorage(prop.potentialCandidate?.login)}
+             onClick={() => removeFromStorage(prop.potentialCandidate?.login, prop.setPotentialCandidates)}
              style={{ backgroundColor: 'red', color: 'white', borderRadius: '50%', border: 'none', width: '30px', height: '30px' }}>
                 &minus;
             </button>

@@ -3,16 +3,18 @@ import CandidateTable from '../components/CandidateTable';
 
 interface potentialCandidates {
   potentialCandidates: Candidate[],
-  removeFromStorage?: void,
+  setPotentialCandidates: React.Dispatch<React.SetStateAction<Candidate[]>>;
 }
 // const SavedCandidatesTable = () => {
 const SavedCandidatesTable = (props:potentialCandidates) => {
+
   return (
     <>
         {props.potentialCandidates.map((candidate) => (
         <CandidateTable
             key={candidate.login}
             potentialCandidate={candidate}
+            setPotentialCandidates={props.setPotentialCandidates}
         />
         ))}
     </>
