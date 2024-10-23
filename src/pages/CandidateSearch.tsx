@@ -14,7 +14,7 @@ const CandidateSearch = () => {
   const [currentCandidate, setCurrentCandidate] = useState<Candidate>({
     avatar_url: '',
     login: '',
-    Name:'',
+    name:'',
     location: '',
     email: '',
     company: '',

@@ -24,7 +24,7 @@ const CandidateCard = (prop:CandidateCardProp) => {
                 <img src={prop.currentCandidate?.avatar_url} alt={`${prop.currentCandidate?.login}`} />
             </div>
             <div className="profile-card__details">
-                <h2>{prop.currentCandidate?.login}<span>({prop.currentCandidate?.login})</span></h2>
+                <h2>{prop.currentCandidate?.login}<span>({prop.currentCandidate?.name})</span></h2>
                 <p><strong>Location:</strong> {prop.currentCandidate?.location}</p>
                 <p><strong>Email:</strong> <a href={`mailto:${prop.currentCandidate?.email}`}>{prop.currentCandidate?.email}</a></p>
                 <p><strong>Company:</strong> {prop.currentCandidate?.company}</p>
