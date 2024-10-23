@@ -34,6 +34,7 @@ const SavedCandidates = () => {
 
   useEffect(() => {
     const storedCandidates = localStorage.getItem('potentialCandidates');
+    console.log(storedCandidates);
     if (storedCandidates) {
       const parsedCandidates = JSON.parse(storedCandidates);
       setPotentialCandidates(parsedCandidates);
